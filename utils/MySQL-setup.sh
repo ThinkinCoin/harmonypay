@@ -24,6 +24,11 @@ mysql -e "CREATE USER IF NOT EXISTS '${DB_USER}'@'${DB_HOST}' IDENTIFIED BY '${D
 mysql -e "GRANT ALL PRIVILEGES ON *.* TO '${DB_USER}'@'${DB_HOST}';"
 mysql -e "FLUSH PRIVILEGES;"
 
+# Grant SYSTEM_VARIABLES_ADMIN privilege
+# Replace 'root' with your root username and 'root_password' with your root password
+mysql -u ${DB_USER} -p'${DB_PASSWORD}' -e "GRANT SYSTEM_VARIABLES_ADMIN ON *.* TO '${DB_USER}'@'${DB_HOST}';"
+mysql -u ${DB_USER} -p'${DB_PASSWORD}' -e "FLUSH PRIVILEGES;"
+
 echo "------------------"
 echo "DB NAME: ${DB_NAME}"
 echo "DB USER: ${DB_USER}"
@@ -42,4 +47,3 @@ cat ./mysql.sql | mysql -h ${DB_HOST} -P ${DB_PORT} -u ${DB_USER} -p${DB_PASSWOR
 sleep 2
 
 echo "${DB_NAME} database setup complete."
-
