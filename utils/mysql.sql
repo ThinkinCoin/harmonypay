@@ -118,4 +118,4 @@ INSERT INTO api.coins (symbol,name,address_length,decimal_precision,token_group,
 
 -- To increase the max connections, you'll have to modify the my.cnf or my.ini configuration file
 -- or dynamically set the max_connections global variable like this:
-SET GLOBAL max_connections = 999;
+-- SET GLOBAL max_connections = 999;
