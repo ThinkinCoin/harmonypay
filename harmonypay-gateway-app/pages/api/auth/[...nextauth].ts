@@ -15,7 +15,7 @@ const isAdminCredentials = (credentials: any) =>
 export default NextAuth({
   // https://next-auth.js.org/configuration/providers
   providers: [
-    CredentialsProvider({
+    /*CredentialsProvider({
       // The name to display on the sign in form (e.g. 'Sign in with...')
       name: "Credentials",
       // The credentials is used to generate a suitable form on the sign in page.
@@ -39,7 +39,7 @@ export default NextAuth({
         }
       },
     }),
-    /*SessionProvider.Email({
+    SessionProvider.Email({
       server: process.env.EMAIL_SERVER,
       from: process.env.EMAIL_FROM,
     }),
