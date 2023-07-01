@@ -25,7 +25,7 @@ export default NextAuth({
         username: { label: "Username", type: "text", placeholder: "harmonyone" },
         password: { label: "Password", type: "password" },
       },
-      authorize: async (credentials) => {
+      async authorize(credentials, req){
         if (isAdminCredentials(credentials)) {
           const user = { id: 1, name: "HarmonyPay Admin", image: "/coins/ONE.png" };
           // Any object returned will be saved in `user` property of the JWT
