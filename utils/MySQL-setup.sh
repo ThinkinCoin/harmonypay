@@ -3,7 +3,12 @@
 # Variables
 read -p "Enter your DB NAME: " DB_NAME
 read -p "Enter your DB USER: " DB_USER
-read -sp "Enter your DB PASSWORD: " DB_PASSWORD
+
+echo "Enter your DB PASSWORD: "
+stty -echo
+read DB_PASSWORD
+stty echo
+
 read -p "Enter your DB HOST: " DB_HOST
 DB_PORT=3306
 
@@ -26,8 +31,9 @@ mysql -e "FLUSH PRIVILEGES;"
 
 # Grant SYSTEM_VARIABLES_ADMIN privilege
 # Replace 'root' with your root username and 'root_password' with your root password
-mysql -u ${DB_USER} -p'${DB_PASSWORD}' -e "GRANT SYSTEM_VARIABLES_ADMIN ON *.* TO '${DB_USER}'@'${DB_HOST}';"
-mysql -u ${DB_USER} -p'${DB_PASSWORD}' -e "FLUSH PRIVILEGES;"
+
+# mysql -u root -p'root_password' -e "GRANT SYSTEM_VARIABLES_ADMIN ON *.* TO '${DB_USER}'@'${DB_HOST}';"
+# mysql -u root -p'root_password' -e "FLUSH PRIVILEGES;"
 
 echo "------------------"
 echo "DB NAME: ${DB_NAME}"
