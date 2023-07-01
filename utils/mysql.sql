@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS api;
 CREATE SCHEMA api;
 
 CREATE TABLE api.orders (
