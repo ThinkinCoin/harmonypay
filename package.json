@@ -24,7 +24,13 @@
   },
   "dependencies": {
     "docker": "^1.0.0",
+<<<<<<< HEAD
     "pm2": "^5.3.0",
     "react": "16.13.1"
+=======
+    "pm2": "^5.3.0"
+    "@next-auth/typeorm-legacy-adapter": "^2.0.2",
+    "next-auth": "4.22.1"
+>>>>>>> d63a34a7880b03c48d7d431b83478eae17bcfbd8
   }
 }
